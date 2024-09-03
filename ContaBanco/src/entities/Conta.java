@@ -7,10 +7,15 @@ public class Conta {
     private final String nomeCliente;
     private double saldo;
 
-    public Conta(int numero, String agencia, String nomeCliente) {
+    private Conta(int numero, String agencia, String nomeCliente) {
         this.numero = numero;
         this.agencia = agencia;
         this.nomeCliente = nomeCliente;
+        this.saldo = 0.0;
+    }
+
+    public static Conta novaConta(int numero, String agencia, String nomeCliente) {
+        return new Conta(numero, agencia, nomeCliente);
     }
 
     public int getNumero() {
